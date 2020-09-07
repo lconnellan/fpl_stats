@@ -56,6 +56,10 @@ except TimeoutException:
     print("Loading took > 3 secs. Check the page is loading properly.")
 select = Select(driver.find_element_by_id('filter'))
 
+removes = driver.find_elements_by_class_name("SquadPitchElement__StyledRemove-sc-1ivaqjz-0.enyQIm")
+for r in removes:
+    r.find_element_by_xpath('..').click()
+
 positions = ['Forwards', 'Defenders', 'Midfielders', 'Goalkeepers']
 for p in positions:
     select.select_by_visible_text(p)
