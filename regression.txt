@@ -1,0 +1,5 @@
+overall: c= 0.22, m = 18.53
+forwards: c = -47.77, m = 22.87
+defenders: c = -122.38, m = 40.76
+midfielders: c = -22.63, m = 19.73
+goalkeepers: c = -314.41, m = 81.04

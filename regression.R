@@ -1,0 +1,8 @@
+con <- dbConnect(RMariaDB::MariaDB(), user='user', dbname = "fpl", host='localhost')
+dbListTables(con)
+query<-paste("SELECT * FROM players WHERE position='Forward'")
+rs = dbSendQuery(con, query)
+forwards<-dbFetch(rs)
+plot(forwards[[5]], forwards[[6]])
+lm(forwards[[6]] ~ forwards[[5]])
+#abline(-47.77, 22.87)

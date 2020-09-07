@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>FPL statistics</title>
+  <link href="/static/jquery.dataTables.min.css" rel="stylesheet">
+  <script src="/static/jquery.dataTables.min.js"></script>
+  <script src="/static/jquery.js"></script>
+  <script>
+    $(document).ready( function () {
+        $('#dataTable').DataTable();
+    } );
+  </script>
+  <style>
+  .hide {
+    display: none;
+  }
+  .question:hover + .hide {
+    display: inline-block;
+    border: 2px solid red;
+    border-radius: 5px;
+    position: absolute;
+    font-weight: normal;
+    background-color: white;
+    padding: 5px;
+  }
+  </style>
+</head>
+
+<body>
+  <table id="dataTable" class="display">
+    <thead><tr>
+      <th>Name</th>
+      <th>Club</th>
+      <th>Position</th>
+      <th>Price</th>
+      <th>Points</th>
+      <th><div class="question">Value (?)</div><div class="hide">Value in points per million (£).
+      Exact formula takes into account the base price of the player (e.g. 4.5m defender costs 0.5m
+      above the minimum price). N.B. this metric favours cheap players.</div></th>
+      <th><div class="question">Deviation (?)</div><div class="hide">This looks at the correlation
+      between price and points and shows whether the player overperforms or underperforms given
+      their price. Higher = better.</div></th>
+      <th><div class="question">Deviation by Position (?)</div><div class="hide">Like deviation but
+      looks at each position separately. Useful if you want to compare players in a specific
+      position.</div></th>
+    </tr></thead>
+    <tbody>
+    {% for row in result %}
+      <tr>
+        <td>{{row['name']}}</td>
+        <td>{{row['club']}}</td>
+        <td>{{row['position']}}</td>
+        <td>{{row['price']}}</td>
+        <td>{{row['points']}}</td>
+        <td>{{row['value']}}</td>
+        <td>{{row['deviation']}}</td>
+        <td>{{row['deviation_by_pos']}}</td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</body>
+
+</html>
