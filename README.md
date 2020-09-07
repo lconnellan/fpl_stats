@@ -14,3 +14,11 @@ A simple project to showcase some useful stats for evaluating players, namely de
 * To run website: `/run.py`
 * To update players: `python update.py`
 * To remake database: `mysql < rollback.sql && mysql < fpl.sql`
+
+## Screenshots
+
+Website:
+![Website](website.jpg)
+
+Linear regression graph:
+![graph](regression.jpg)
