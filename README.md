@@ -11,6 +11,6 @@ A simple project to showcase some useful stats for evaluating players, namely de
 
 ## Usage
 
-To run website: `/run.py`
-To update players: `python update.py`
-To remake database: `mysql < rollback.sql && mysql < fpl.sql`
+* To run website: `/run.py`
+* To update players: `python update.py`
+* To remake database: `mysql < rollback.sql && mysql < fpl.sql`
